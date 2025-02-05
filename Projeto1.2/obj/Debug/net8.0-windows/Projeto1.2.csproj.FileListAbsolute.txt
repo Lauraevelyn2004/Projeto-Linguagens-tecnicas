@@ -35,3 +35,4 @@ C:\Users\WINDOWS 10\OneDrive\Documents\Linguagens tecnicas\Projeto1.2\Projeto1.2
 C:\Users\WINDOWS 10\OneDrive\Documents\Linguagens tecnicas\Projeto1.2\Projeto1.2\obj\Debug\net8.0-windows\Projeto1.2.csproj.Up2Date
 C:\Users\WINDOWS 10\OneDrive\Documents\Linguagens tecnicas\Projeto1.2\Projeto1.2\obj\Debug\net8.0-windows\Projeto1._2.MenuClientes.resources
 C:\Users\WINDOWS 10\OneDrive\Documents\Linguagens tecnicas\Projeto1.2\Projeto1.2\obj\Debug\net8.0-windows\Projeto1._2.Login.resources
+C:\Users\WINDOWS 10\OneDrive\Documents\Linguagens tecnicas\Projeto1.2\Projeto1.2\obj\Debug\net8.0-windows\Projeto1.2.sourcelink.json

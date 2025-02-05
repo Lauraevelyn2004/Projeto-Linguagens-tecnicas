@@ -32,11 +32,17 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            txtlogin = new TextBox();
+            TxtSenha = new TextBox();
             button1 = new Button();
             label4 = new Label();
             btsair = new Label();
+            btversenha = new PictureBox();
+            tabPage2 = new TabPage();
+            tabPage1 = new TabPage();
+            tabControl1 = new TabControl();
+            ((System.ComponentModel.ISupportInitialize)btversenha).BeginInit();
+            tabControl1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -79,21 +85,24 @@
             label3.Text = "       Senha:";
             label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // textBox1
+            // txtlogin
             // 
-            textBox1.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold);
-            textBox1.Location = new Point(47, 329);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(299, 31);
-            textBox1.TabIndex = 3;
+            txtlogin.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold);
+            txtlogin.Location = new Point(47, 329);
+            txtlogin.Name = "txtlogin";
+            txtlogin.Size = new Size(299, 31);
+            txtlogin.TabIndex = 3;
+            txtlogin.TextChanged += textBox1_TextChanged;
             // 
-            // textBox2
+            // TxtSenha
             // 
-            textBox2.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold);
-            textBox2.Location = new Point(47, 403);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(299, 31);
-            textBox2.TabIndex = 4;
+            TxtSenha.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold);
+            TxtSenha.Location = new Point(47, 403);
+            TxtSenha.Name = "TxtSenha";
+            TxtSenha.Size = new Size(261, 31);
+            TxtSenha.TabIndex = 4;
+            TxtSenha.UseSystemPasswordChar = true;
+            TxtSenha.TextChanged += textBox2_TextChanged;
             // 
             // button1
             // 
@@ -131,6 +140,51 @@
             btsair.Text = "Sair";
             btsair.Click += btsair_Click;
             // 
+            // btversenha
+            // 
+            btversenha.Cursor = Cursors.Hand;
+            btversenha.Image = Properties.Resources.invisível;
+            btversenha.Location = new Point(314, 411);
+            btversenha.Name = "btversenha";
+            btversenha.Size = new Size(16, 16);
+            btversenha.SizeMode = PictureBoxSizeMode.AutoSize;
+            btversenha.TabIndex = 6;
+            btversenha.TabStop = false;
+            btversenha.CursorChanged += hand;
+            btversenha.Click += btversenha_Click;
+            btversenha.MouseDown += btversenha_MouseDown;
+            btversenha.MouseUp += btversenha_MouseUp;
+            // 
+            // tabPage2
+            // 
+            tabPage2.Location = new Point(4, 30);
+            tabPage2.Name = "tabPage2";
+            tabPage2.Padding = new Padding(3);
+            tabPage2.Size = new Size(192, 66);
+            tabPage2.TabIndex = 1;
+            tabPage2.Text = "tabPage2";
+            tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tabPage1
+            // 
+            tabPage1.Location = new Point(4, 30);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new Padding(3);
+            tabPage1.Size = new Size(192, 66);
+            tabPage1.TabIndex = 0;
+            tabPage1.Text = "tabPage1";
+            tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabControl1
+            // 
+            tabControl1.Controls.Add(tabPage1);
+            tabControl1.Controls.Add(tabPage2);
+            tabControl1.Location = new Point(9, 525);
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new Size(200, 100);
+            tabControl1.TabIndex = 7;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(10F, 21F);
@@ -138,9 +192,11 @@
             BackgroundImage = Properties.Resources.Designer__12_2;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(579, 526);
+            Controls.Add(tabControl1);
+            Controls.Add(btversenha);
             Controls.Add(button1);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(TxtSenha);
+            Controls.Add(txtlogin);
             Controls.Add(btsair);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -155,6 +211,8 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
             Load += Login_Load;
+            ((System.ComponentModel.ISupportInitialize)btversenha).EndInit();
+            tabControl1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -164,10 +222,14 @@
         private Label label1;
         private Label label2;
         private Label label3;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox txtlogin;
+        private TextBox TxtSenha;
         private Button button1;
         private Label label4;
         private Label btsair;
+        private PictureBox btversenha;
+        private TabPage tabPage2;
+        private TabPage tabPage1;
+        private TabControl tabControl1;
     }
 }

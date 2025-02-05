@@ -14,6 +14,8 @@ namespace Projeto1._2
     {
         string server = @"server=localhost;user id=root;password=;database=casaracao";
 
+        public static DataTable DtLogin;
+
         //Memsagem de erro
         public static void MsgErro(string Msg)
         {

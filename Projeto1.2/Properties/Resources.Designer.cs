@@ -63,6 +63,16 @@ namespace Projeto1._2.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Captura_de_tela_2025_02_05_180911 {
+            get {
+                object obj = ResourceManager.GetObject("Captura de tela 2025-02-05 180911", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap degrade1 {
             get {
                 object obj = ResourceManager.GetObject("degrade1", resourceCulture);
@@ -106,6 +116,16 @@ namespace Projeto1._2.Properties {
         internal static System.Drawing.Bitmap Designer__12_2 {
             get {
                 object obj = ResourceManager.GetObject("Designer (12)2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap download__1_ {
+            get {
+                object obj = ResourceManager.GetObject("download (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,9 +203,29 @@ namespace Projeto1._2.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap invisível {
+            get {
+                object obj = ResourceManager.GetObject("invisível", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Não_foi_possível_encontrar_este_cadastro {
             get {
                 object obj = ResourceManager.GetObject("Não foi possível encontrar este cadastro", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap visível {
+            get {
+                object obj = ResourceManager.GetObject("visível", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

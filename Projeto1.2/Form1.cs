@@ -23,7 +23,7 @@ namespace Projeto1._2
 
         }
 
-        private  void Form1_Load(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
 
             Funcoes.BuscaSql("SELECT * FROM Cliente");
@@ -33,21 +33,21 @@ namespace Projeto1._2
             }
             else
             {
-                
-               btncadastro.Text = "     Alterar";
+
+                btncadastro.Text = "     Alterar";
             }
-  
+
 
             //alterar
             DataTable dt = new DataTable();
             dt = Funcoes.BuscaSql("SELECT * FROM Cliente WHERE Cliente_ID = " + txtcod.Text);
-               
+
             txtnome.Text = dt.Rows[0]["Nome"].ToString();
             txtemail.Text = dt.Rows[0]["Email"].ToString();
             txttel.Text = dt.Rows[0]["Telefone"].ToString();
             txtend.Text = dt.Rows[0]["Endereco"].ToString();
             txtsenha.Text = dt.Rows[0]["Senha"].ToString();
-           
+
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
@@ -77,7 +77,7 @@ namespace Projeto1._2
             {
                 return; // Para a execução
             }
-
+            
             SalvarCliente(); // Chama o método para salvar o cliente
         }
 
@@ -162,7 +162,7 @@ namespace Projeto1._2
                         cmd.CommandText = "SELECT @@IDENTITY";
                         txtcod.Text = cmd.ExecuteScalar().ToString();
                     }
-  
+
                 }
                 // Mensagem de sucesso
                 Funcoes.MsgOK("Registro inserido com sucesso!");
@@ -211,8 +211,10 @@ namespace Projeto1._2
             return true;
         }//Fim ValidarCampos
 
-        
+        private void txtsenha_TextChanged(object sender, EventArgs e)
+        {
+            string senha = Funcoes.Criptografar(txtsenha.Text);
 
-
-     }
+        }
+    }
 }

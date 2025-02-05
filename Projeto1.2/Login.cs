@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Projeto1._2.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -36,28 +37,76 @@ namespace Projeto1._2
         }
 
         private void button1_Click(object sender, EventArgs e)
-
-
         {
-            // Conexão com o banco de dados
-            MySqlConnection conexao = new MySqlConnection(@"server=localhost;user id=root;password=;database=casaracao");
-            conexao.Open();
-
-            // Preparar o comando
-            using (MySqlCommand cmd = conexao.CreateCommand())
+            using (MySqlConnection conexao = new MySqlConnection(@"server=localhost;user id=root;password=;database=casaracao"))
             {
+                conexao.Open();
 
-                string senha = Funcoes.Criptografar("123");
+                using (MySqlCommand cmd = conexao.CreateCommand())
+                {
+                    
+                    
 
+                    // Corrigindo a Query (agora filtra por Email e Senha)
+                    cmd.CommandText = "SELECT * FROM cliente WHERE Email = @Email AND Senha = @Senha";
+                    cmd.Parameters.AddWithValue("@Email", txtlogin.Text);
+                    cmd.Parameters.AddWithValue("@Senha", TxtSenha.Text);
 
-                cmd.CommandText = @$"INSERT INTO Cliente (Email , Senha) VALUES ('laura','{senha}')";
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())  //  Se encontrou um registro
+                        {
+                            MessageBox.Show("Login realizado com sucesso!");
 
-                senha = Funcoes.Criptografar("123");
-
-
+                            // Criando instância antes de exibir a tela
+                            MenuClientes menuClientes = new MenuClientes();
+                            menuClientes.ShowDialog();
+                        }
+                        else
+                        {
+                            MessageBox.Show("E-mail ou senha incorretos!");
+                        }
+                    }
+                }
             }
 
+        }
+
+
+
+
+
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
 
         }
-    } 
+
+        private void btversenha_MouseDown(object sender, MouseEventArgs e)
+        {
+            TxtSenha.UseSystemPasswordChar = false;
+            btversenha.Image = Resources.visível;
+        }
+
+        private void btversenha_MouseUp(object sender, MouseEventArgs e)
+        {
+            TxtSenha.UseSystemPasswordChar = true;
+            btversenha.Image = Resources.invisível;
+        }
+
+        private void btversenha_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void hand(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
